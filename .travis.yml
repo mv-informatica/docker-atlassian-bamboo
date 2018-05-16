@@ -1,6 +1,7 @@
 branches:
   only:
   - master
+  - test-validation
   - eap
 
 sudo: required
