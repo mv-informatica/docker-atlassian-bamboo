@@ -54,7 +54,7 @@ RSpec.configure do |config|
   Excon.defaults[:read_timeout]  = timeout
 
   Capybara.configure do |conf|
-    conf.register_driver :poltergeist_debug do |app|
+    Capybara.register_driver :poltergeist_debug do |app|
       Capybara::Poltergeist::Driver.new app, timeout: timeout,
         # we should't care about javascript errors since we did not make any
         # implementation, but only deliver the software packages as best
