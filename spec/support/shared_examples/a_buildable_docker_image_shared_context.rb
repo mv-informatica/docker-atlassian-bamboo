@@ -6,13 +6,13 @@ shared_examples 'a buildable Docker image' do |path, options = {}|
     @container.start! PublishAllPorts: true
     @container.setup_capybara_url tcp: 8085
     # Apply hack for Travis
-    if ENV['TRAVIS']
-      Thread.new do
-        @container.streaming_logs stdout: true, stderr: true, follow: true do |stream, chunk|
-          puts "[#{stream}] #{chunk}"
-        end
-      end
-    end
+    # if ENV['TRAVIS']
+    #   Thread.new do
+    #     @container.streaming_logs stdout: true, stderr: true, follow: true do |stream, chunk|
+    #       puts "[#{stream}] #{chunk}"
+    #     end
+    #   end
+    # end
   end
 
   describe 'when starting a Bamboo container' do
